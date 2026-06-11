@@ -1,168 +1,202 @@
-# EcoStay Connect
+# RouteWise AI
 
-## AI-Powered Homestay and Eco-Tourism Platform
+## Intelligent Public Transport Navigation System
 
 ### Project Overview
 
-EcoStay Connect is a web application designed to connect travelers with local homestays and eco-tourism experiences. The platform aims to promote sustainable tourism while supporting local communities and small business owners. Many travelers are looking for authentic experiences that allow them to explore local culture, traditions, food, and natural attractions, but often face difficulties finding trusted homestays and reliable information.
+RouteWise AI is a smart public transport navigation platform designed to help travelers, students, tourists, and local residents find the most affordable and convenient routes using local public transportation. The platform focuses on transport services that are often not fully represented on traditional navigation platforms, such as shared autos, vikrams, magic vehicles, city buses, electric buses, and other local transit options.
 
-EcoStay Connect will serve as a digital platform where users can discover homestays, explore eco-tourism destinations, receive personalized travel recommendations, and connect directly with local hosts. The platform will focus on creating meaningful travel experiences while helping local communities benefit from tourism opportunities.
+The goal of RouteWise AI is to simplify travel in unfamiliar cities by providing users with clear route guidance, fare estimates, transport comparisons, and AI-powered travel assistance. By making public transport information more accessible, the platform encourages affordable and sustainable travel while reducing dependency on expensive taxis and ride-hailing services.
 
 ---
 
 ## Problem Statement
 
-Traditional tourism platforms often focus on hotels and commercial accommodations, making it difficult for local homestay owners and eco-tourism providers to reach potential travelers. Many tourists are interested in sustainable travel and authentic local experiences but lack a centralized platform to discover verified homestays and eco-friendly destinations.
+Many people traveling to a new city face difficulties understanding the local public transportation system. While navigation platforms provide information about major transit systems such as metro networks, they often lack detailed information about local transport options like shared autos, vikrams, magic vehicles, and regional bus routes.
 
-Local hosts also face challenges in marketing their services and attracting visitors through digital channels. There is a need for a platform that bridges the gap between travelers seeking unique experiences and local communities offering them.
-
----
-
-## Objectives
-
-The primary objectives of EcoStay Connect are:
-
-- Promote sustainable and responsible tourism.
-- Support local homestay owners and eco-tourism businesses.
-- Help travelers discover authentic local experiences.
-- Provide personalized travel recommendations.
-- Improve accessibility to information about eco-tourism destinations.
-- Create a digital ecosystem that benefits both travelers and local communities.
+As a result, travelers frequently spend more money on taxis and private transportation or struggle to find the correct route. RouteWise AI aims to bridge this information gap by providing a centralized platform that helps users navigate local transportation networks easily and efficiently.
 
 ---
 
-## Key Features
+## Project Objectives
 
-### User Features
-
-#### User Registration and Authentication
-Users can create accounts, log in securely, and manage their profiles.
-
-#### Homestay Search and Discovery
-Travelers can search for homestays based on location, budget, amenities, and preferences.
-
-#### Destination Exploration
-Users can explore eco-tourism destinations, local attractions, cultural sites, and activities.
-
-#### Booking Management
-Travelers can submit booking requests and manage their reservations.
-
-#### Reviews and Ratings
-Users can share their experiences and provide feedback on homestays and destinations.
+- Simplify local public transport navigation.
+- Help users find affordable travel options.
+- Reduce dependence on expensive transportation services.
+- Improve accessibility of public transport information.
+- Provide intelligent route recommendations.
+- Support sustainable and cost-effective travel.
+- Assist tourists and first-time visitors in navigating unfamiliar cities.
 
 ---
 
-### Host Features
+## Core Features
 
-#### Homestay Listing Management
-Hosts can add, edit, and manage their property listings.
+### Smart Route Planning
 
-#### Booking Dashboard
-Hosts can view and manage customer booking requests.
+Users can enter their source and destination to discover available public transport routes.
 
-#### Property Information Updates
-Hosts can update property details, images, amenities, and pricing.
+### Multi-Transport Navigation
 
-#### Customer Communication
-Hosts can interact with travelers and respond to inquiries.
+The platform supports multiple transport modes including:
+
+- City Bus
+- Electric Bus
+- Shared Auto
+- Vikram
+- Magic Vehicle
+- Other Local Transit Services
+
+### Fare Estimation
+
+Users can view the estimated travel cost before beginning their journey.
+
+### Travel Time Estimation
+
+The system provides approximate journey duration for each available route.
+
+### Route Comparison
+
+Users can compare multiple routes based on:
+
+- Cost
+- Travel Time
+- Number of Transfers
+- Convenience
+
+### Step-by-Step Travel Guidance
+
+The platform provides detailed instructions including:
+
+- Where to board
+- Which vehicle to take
+- Where to change transport
+- Final destination guidance
 
 ---
 
-### Admin Features
+## AI Features
 
-#### User Management
-Administrators can monitor and manage user accounts.
+### Intelligent Route Recommendation
 
-#### Listing Verification
-Admins can verify homestays to maintain platform quality and trust.
+AI analyzes available routes and recommends the most suitable option based on user preferences.
 
-#### Platform Monitoring
-Administrators can review activity, manage content, and ensure platform security.
+### Personalized AI Travel Assistant
 
----
+Users can ask travel-related questions in natural language and receive route guidance.
 
-## AI Integration
+Example:
 
-EcoStay Connect will leverage Artificial Intelligence to enhance user experience and simplify travel planning.
+> How can I reach Mussoorie from ISBT under ₹100?
 
-### AI Travel Assistant
-An AI-powered assistant will help travelers find suitable homestays and destinations based on their preferences.
+### Cost-Optimized Route Suggestions
 
-### Personalized Recommendations
-The system will recommend accommodations, attractions, and activities tailored to user interests.
+AI identifies the most economical route available.
 
-### Smart Itinerary Generation
-Users can receive customized travel plans based on budget, duration, and travel preferences.
+### Multi-Route Analysis
 
-### Review Summarization
-AI will summarize user reviews to provide quick insights about homestays and destinations.
+AI compares different travel options and explains their advantages.
 
-### Budget-Based Planning
-The platform will suggest travel options that align with the user's budget and requirements.
+### Natural Language Query Support
+
+Users can interact with the platform using conversational language instead of manually searching routes.
 
 ---
 
 ## Technology Stack
 
-### Frontend Development
-- Next.js
+### Frontend
+
+- React.js
 - HTML
 - CSS
 - JavaScript
 
-### Backend Development
+### Backend
+
 - Node.js
 - Express.js
 
 ### Database
+
 - MongoDB Atlas
 
-### Artificial Intelligence
+### AI Integration
+
 - Gemini API
+- Future LLM Integrations
+
+### Maps and Location Services
+
+- OpenStreetMap
+- Leaflet.js
 
 ### Version Control
+
 - Git
 - GitHub
 
-### Deployment
-- Vercel
-- Render
+---
+
+## Target Users
+
+### Tourists
+
+Visitors unfamiliar with local transportation systems.
+
+### Students
+
+Students looking for affordable daily transportation.
+
+### Local Residents
+
+Residents seeking better route planning and transport comparisons.
+
+### Budget Travelers
+
+Travelers who prefer public transportation over expensive private options.
 
 ---
 
 ## Expected Benefits
 
-### For Travelers
-- Easy discovery of trusted homestays.
-- Personalized travel recommendations.
-- Better trip planning experience.
-- Access to authentic local experiences.
+### For Users
 
-### For Hosts
-- Increased visibility and bookings.
-- Digital platform for promoting services.
-- Improved customer engagement.
+- Reduced travel costs.
+- Easier route discovery.
+- Better understanding of local transportation systems.
+- Faster travel planning.
 
-### For Local Communities
-- Increased tourism opportunities.
-- Economic growth through local participation.
-- Promotion of local culture and traditions.
+### For Cities
+
+- Increased use of public transportation.
+- Better accessibility of local transport information.
+- Promotion of sustainable mobility solutions.
 
 ---
 
 ## Future Scope
 
-The project can be expanded with additional features such as:
+The project can be expanded with several advanced features:
 
-- Online payment integration.
-- Mobile application development.
-- Multi-language support.
-- AI chatbot assistance.
-- Local guide booking system.
-- Event and activity management.
-- Smart recommendation engine.
-- Real-time availability tracking.
-- Integration with maps and navigation services.
+- Mobile Application Development
+- Offline Route Access
+- Real-Time Vehicle Tracking
+- Live Traffic Updates
+- Community-Contributed Route Information
+- Multi-City Support
+- Voice-Based AI Assistant
+- Multilingual Support
+- QR-Based Ticket Integration
+- Smart Mobility Dashboard
+
+---
+
+## Initial Implementation Scope
+
+The first version of RouteWise AI will focus on major public transport routes within Dehradun. The platform will provide route planning, fare estimation, transport comparisons, and AI-powered travel assistance using curated transport data.
+
+Future versions will gradually expand to additional cities and support a larger variety of transportation services.
 
 ---
 
@@ -170,7 +204,7 @@ The project can be expanded with additional features such as:
 
 Current Status: Project Proposal and Planning Phase
 
-This project is being developed as part of SIP 2026 and is currently in the planning and design stage. Future development will focus on implementing core features, AI integration, and user-friendly functionality.
+This project is being developed as part of SIP 2026 and is currently in the planning and design stage.
 
 ---
 
