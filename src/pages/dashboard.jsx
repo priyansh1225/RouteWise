@@ -1,5 +1,6 @@
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
+import Card from "../component/card";
 
 function Dashboard() {
   return (
@@ -9,9 +10,22 @@ function Dashboard() {
       <div className="page">
         <h1>Dashboard</h1>
 
-        <p>
-          View transport updates, route suggestions and community reports.
-        </p>
+        <div className="card-section">
+          <Card
+            title="Recent Searches"
+            description="View recently searched routes."
+          />
+
+          <Card
+            title="Community Alerts"
+            description="Latest transport updates from users."
+          />
+
+          <Card
+            title="Popular Routes"
+            description="Frequently travelled routes."
+          />
+        </div>
       </div>
 
       <Footer />

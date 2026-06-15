@@ -6,12 +6,24 @@ function Login() {
     <>
       <Navbar />
 
-      <div className="page">
+      <div className="login-page">
         <h1>Login</h1>
 
-        <p>Login to submit community transport updates.</p>
+        <form className="login-form">
+          <input
+            type="email"
+            placeholder="Enter Email"
+          />
 
-        <button className="login-btn">Login</button>
+          <input
+            type="password"
+            placeholder="Enter Password"
+          />
+
+          <button type="submit">
+            Login
+          </button>
+        </form>
       </div>
 
       <Footer />
