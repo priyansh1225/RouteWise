@@ -1,16 +1,33 @@
+import { useNavigate } from "react-router-dom";
+import logo from "../assets/routewise-logo.png";
+
 function Hero() {
+  const navigate = useNavigate();
+
   return (
-    <section>
-      <h1>RouteWise</h1>
+    <section className="hero">
+      <div className="hero-content">
+        <h1>Find the Smartest Public Transport Route</h1>
 
-      <h2>Find the Smartest Public Transport Route</h2>
+        <p>
+          Navigate buses, vikrams, magic vehicles and local transport
+          with ease.
+        </p>
 
-      <p>
-        Navigate buses, vikrams, magic vehicles and local transport
-        with ease.
-      </p>
+       <button
+  onClick={() =>
+    document
+      .getElementById("search-route")
+      .scrollIntoView({ behavior: "smooth" })
+  }
+>
+  Plan Your Route
+</button>
+ </div>
 
-      <button>Plan Your Route</button>
+      <div className="hero-image">
+        <img src={logo} alt="RouteWise Logo" />
+      </div>
     </section>
   );
 }

@@ -1,11 +1,19 @@
 import { Link } from "react-router-dom";
+import logo from "../assets/routewise-logo.png";
 
 function Navbar() {
   return (
-    <nav>
-      <h2>RouteWise</h2>
+    <nav className="navbar">
+      <div className="logo-container">
+        <img
+          src={logo}
+          alt="RouteWise Logo"
+          className="navbar-logo"
+        />
+        <h2>RouteWise</h2>
+      </div>
 
-      <ul>
+      <ul className="nav-links">
         <li>
           <Link to="/">Home</Link>
         </li>

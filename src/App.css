@@ -1,184 +1,225 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+body {
+  font-family: Arial, sans-serif;
+  background: #071a2d;
+  color: white;
 }
 
-#center {
+/* hero Styling */
+
+ .hero {
   display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
+  justify-content: space-between;
+  align-items: center;
 
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 80px 40px;
 }
 
-#next-steps {
+.hero-content {
+  flex: 1;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.hero-content button {
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+
+  background-color: #2196f3;
+  color: white;
+  font-size: 1rem;
+}
+
+.hero-image {
+  flex: 1;
+  text-align: center;
+}
+
+.hero-image img {
+  width: 400px;
+  max-width: 100%;
+}
+
+/* Navbar Styling */
+
+.navbar {
   display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
+  justify-content: space-between;
+  align-items: center;
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
+  padding: 20px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
 
-  @media (max-width: 1024px) {
+.navbar-logo {
+  height: 90px;
+  width: auto;
+}
+
+.logo-container h2 {
+  color: white;
+  margin: 0;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #8bc34a;
+}
+
+.card-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 40px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: #0f2740;
+  padding: 25px;
+  border-radius: 12px;
+
+  border: 1px solid #1e3a5f;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.page {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 40px;
+}
+
+.login-btn {
+  background: #2196f3;
+  color: white;
+  border: none;
+
+  padding: 12px 24px;
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.footer {
+  background: #051321;
+
+  padding: 30px;
+  text-align: center;
+
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .hero {
     flex-direction: column;
     text-align: center;
   }
-}
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
+  .card-section {
+    grid-template-columns: 1fr;
   }
 
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
+  .navbar {
+    flex-direction: column;
+    gap: 15px;
   }
 
-  @media (max-width: 1024px) {
-    margin-top: 20px;
+  .nav-links {
     flex-wrap: wrap;
     justify-content: center;
-
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
-
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
   }
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.search-section {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 40px;
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+.search-section h2 {
+  margin-bottom: 20px;
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+.search-box {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+.search-box input {
+  flex: 1;
+  min-width: 250px;
+
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+}
+
+.search-box button {
+  padding: 12px 24px;
+
+  border: none;
+  border-radius: 8px;
+
+  background: #2196f3;
+  color: white;
+  cursor: pointer;
+}
+
+.updates-section {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 40px;
+}
+
+.updates-section h2 {
+  margin-bottom: 20px;
+}
+
+.update-card {
+  background: #0f2740;
+
+  padding: 20px;
+  border-radius: 10px;
+
+  margin-bottom: 15px;
 }

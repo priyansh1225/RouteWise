@@ -1,32 +1,40 @@
 import Navbar from "../component/navbar";
 import Hero from "../component/hero";
+import SearchRoute from "../component/searchroute";
 import Card from "../component/card";
+import CommunityUpdates from "../component/communityupdates";
 import Footer from "../component/footer";
 
 function Home() {
   return (
-    <div>
+    <>
       <Navbar />
+
       <Hero />
 
-      <Card
-        title="Smart Route Planning"
-        description="Find the best public transport route."
-      />
+      <SearchRoute />
 
-      <Card
-        title="Fare Estimation"
-        description="Compare travel costs before travelling."
-      />
+      <section className="card-section">
+        <Card
+          title="Smart Route Planning"
+          description="Find the best public transport route."
+        />
 
-      <Card
-        title="Community Updates"
-        description="Get verified route diversion and closure updates."
-      />
+        <Card
+          title="Fare Estimation"
+          description="Estimate travel costs before travelling."
+        />
+
+        <Card
+          title="Live Updates"
+          description="Receive transport updates from users."
+        />
+      </section>
+
+      <CommunityUpdates />
 
       <Footer />
-    </div>
-    
+    </>
   );
 }
 

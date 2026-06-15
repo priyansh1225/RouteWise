@@ -3,15 +3,19 @@ import Footer from "../component/footer";
 
 function Login() {
   return (
-    <div>
+    <>
       <Navbar />
 
-      <h1>Login</h1>
+      <div className="page">
+        <h1>Login</h1>
 
-      <p>Login to submit community transport updates.</p>
+        <p>Login to submit community transport updates.</p>
+
+        <button className="login-btn">Login</button>
+      </div>
 
       <Footer />
-    </div>
+    </>
   );
 }
 
