@@ -365,3 +365,153 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.custom-btn {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.custom-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #555;
+}
+
+.toast {
+  background: #222;
+  padding: 12px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.loader {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #444;
+  border-top: 4px solid #c62828;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.modal-overlay {
+  margin-top: 10px;
+}
+
+.modal {
+  background: #222;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #555;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+} 
+
+
+
+.theme-btn {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Theme Toggle */
+
+.theme-btn {
+  background: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.theme-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Light Theme */
+
+.light-theme {
+  background: #f5f7fa;
+  color: #1a1a1a;
+  min-height: 100vh;
+}
+
+.light-theme .navbar {
+  background: #ffffff;
+}
+
+.light-theme .logo-container h2,
+.light-theme .nav-links a {
+  color: #1a1a1a;
+}
+
+.light-theme .hero,
+.light-theme .page,
+.light-theme .search-section,
+.light-theme .updates-section,
+.light-theme .login-page {
+  color: #1a1a1a;
+}
+
+.light-theme .card,
+.light-theme .about-card,
+.light-theme .feature-box,
+.light-theme .update-card,
+.light-theme .modal {
+  background: #ffffff;
+  color: #1a1a1a;
+  border: 1px solid #dcdcdc;
+}
+
+.light-theme .footer {
+  background: #e9eef3;
+  color: #1a1a1a;
+  border-top: 1px solid #dcdcdc;
+}
+
+.light-theme input,
+.light-theme .custom-input,
+.light-theme .login-form input {
+  background: white;
+  color: black;
+  border: 1px solid #ccc;
+}
+
+.light-theme .toast {
+  background: white;
+  color: black;
+}
+
+.light-theme h1,
+.light-theme h2,
+.light-theme h3,
+.light-theme p,
+.light-theme li {
+  color: #1a1a1a;
+}

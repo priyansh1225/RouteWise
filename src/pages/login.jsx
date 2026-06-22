@@ -1,10 +1,10 @@
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 
-function Login() {
+function Login({ toggleTheme }) {
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} />
 
       <div className="login-page">
         <h1>Login</h1>

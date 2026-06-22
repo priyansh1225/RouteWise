@@ -5,10 +5,10 @@ import Card from "../component/card";
 import CommunityUpdates from "../component/communityupdates";
 import Footer from "../component/footer";
 
-function Home() {
+function Home({ toggleTheme }) {
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} />
 
       <Hero />
 

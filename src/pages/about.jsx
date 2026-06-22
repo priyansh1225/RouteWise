@@ -1,10 +1,10 @@
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 
-function About() {
+function About({ toggleTheme }) {
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} />
 
       <div className="page">
         <h1>About RouteWise</h1>

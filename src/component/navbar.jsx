@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/routewise-logo.png";
 
-function Navbar() {
+function Navbar({ toggleTheme }) {
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -30,6 +30,13 @@ function Navbar() {
           <Link to="/login">Login</Link>
         </li>
       </ul>
+
+      <button
+        className="theme-btn"
+        onClick={toggleTheme}
+      >
+        🌙 / ☀️
+      </button>
     </nav>
   );
 }

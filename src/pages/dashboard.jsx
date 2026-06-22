@@ -2,10 +2,10 @@ import Navbar from "../component/navbar";
 import Footer from "../component/footer";
 import Card from "../component/card";
 
-function Dashboard() {
+function Dashboard({ toggleTheme }) {
   return (
     <>
-      <Navbar />
+      <Navbar toggleTheme={toggleTheme} />
 
       <div className="page">
         <h1>Dashboard</h1>
