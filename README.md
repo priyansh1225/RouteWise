@@ -1,101 +1,125 @@
 # RouteWise
 
-RouteWise is a frontend web application developed using React and Vite. The aim of this project is to help users find public transport routes and stay updated with community-reported transport information.
+RouteWise is a web application made using React, Vite, and Express.js. It helps users search public transport routes and view transport-related updates. This project is being developed as part of my internship.
 
-## About the Project
+## Features
 
-Many people face problems when travelling through a city because route information is not always easily available. RouteWise is an attempt to provide a simple platform where users can search routes and view transport-related updates shared by the community.
-
-Currently, the project focuses on frontend development and user interface design.
-
-## Features Implemented
-
-- Responsive navigation bar
-- Home page with hero section
-- Route search interface
-- Community updates section
-- About page
-- Dashboard page
-- Login page UI
-- Reusable React components
-- Responsive design for different screen sizes
-- Hover effects and animations
+- Route Search
+- Dashboard
+- About Page
+- Login Page UI
+- Community Updates
+- Responsive Design
+- Dark and Light Mode
+- Backend API using Express.js
+- CRUD APIs
+- Search API
 
 ## Technologies Used
 
+### Frontend
 - React
 - Vite
 - React Router DOM
 - JavaScript
 - CSS
 
+### Backend
+- Node.js
+- Express.js
+- CORS
+
+### Tools
+- Postman
+- GitHub
+
 ## How to Run the Project
 
-Clone the repository:
+### Clone the repository
 
 ```bash
 git clone https://github.com/priyansh1225/RouteWise.git
 ```
 
-Move into the project folder:
+Go into the project folder.
 
 ```bash
 cd RouteWise
 ```
 
-Install dependencies:
+## Run Frontend
+
+Go to the frontend folder.
+
+```bash
+cd frontend
+```
+
+Install dependencies.
 
 ```bash
 npm install
 ```
 
-Start the development server:
+Start the frontend.
 
 ```bash
 npm run dev
 ```
 
-## Pages
+Frontend runs on:
 
-### Home
-Contains:
-- Hero section
-- Route search section
-- Feature cards
-- Community updates
+```
+http://localhost:5173
+```
 
-### About
-Contains:
-- Project information
-- Key features
-- Future enhancement ideas
+## Run Backend
 
-### Dashboard
-Contains:
-- Recent searches section
-- Community alerts
-- Popular routes section
+Open another terminal.
 
-### Login
-Contains:
-- Email field
-- Password field
-- Login button
+Go to the backend folder.
 
-## Future Improvements
+```bash
+cd backend
+```
 
-The following features can be added in future versions:
+Install dependencies.
 
-- User authentication
-- AI-based route suggestions
-- Real-time transport tracking
-- Live route diversion alerts
-- Saved routes
-- Fare prediction system
-- Community verification system for updates
+```bash
+npm install
+```
+
+Start the server.
+
+```bash
+node server.js
+```
+
+Backend runs on:
+
+```
+http://localhost:5000
+```
+
+## API Endpoints
+
+- GET /routes
+- GET /routes/:id
+- GET /search?from=Location
+- POST /routes
+- PUT /routes/:id
+- DELETE /routes/:id
+
+## Future Plans
+
+- Interactive Route Map
+- AI Travel Assistant
+- Nearby Places
+- Saved Routes
+- Live Transport Tracking
+- User Login
+- MongoDB Database
 
 ## Developer
 
 Priyansh Bhatt
-
-Developed as part of an internship project.
