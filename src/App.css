@@ -503,7 +503,7 @@ body {
   border: 1px solid #ccc;
 }
 
-.light-theme .toast {
+.light-theme .toast { 
   background: white;
   color: black;
 }

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "from": "Clock Tower",
+    "to": "ISBT",
+    "fare": 20,
+    "vehicle": "Bus"
+  },
+  {
+    "id": 2,
+    "from": "Prem Nagar",
+    "to": "Railway Station",
+    "fare": 15,
+    "vehicle": "Vikram"
+  },
+  {
+    "id": 3,
+    "from": "Rajpur Road",
+    "to": "Pacific Mall",
+    "fare": 10,
+    "vehicle": "Bus"
+  },
+  {
+    "id": 4,
+    "from": "ISBT",
+    "to": "Mussoorie",
+    "fare": 120,
+    "vehicle": "Bus"
+  },
+  {
+    "id": 5,
+    "from": "Ballupur",
+    "to": "Clock Tower",
+    "fare": 15,
+    "vehicle": "Auto"
+  },
+  {
+    "id": 6,
+    "from": "Railway Station",
+    "to": "Sahastradhara",
+    "fare": 40,
+    "vehicle": "Bus"
+  }
+]
