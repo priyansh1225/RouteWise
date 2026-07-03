@@ -110,6 +110,39 @@ http://localhost:5000
 - PUT /routes/:id
 - DELETE /routes/:id
 
+## Database
+
+This project uses MongoDB Atlas as the database.
+
+A Route collection is used to store route information.
+
+Each route contains:
+
+- from
+- to
+- fare
+- vehicle
+- createdAt
+- updatedAt
+
+## Database Setup
+
+1. Create a MongoDB Atlas cluster.
+2. Create a database user.
+3. Add your IP address in Network Access.
+4. Create a `.env` file in the backend folder.
+5. Add the MongoDB connection string:
+
+```env
+MONGO_URI=your_mongodb_connection_string
+```
+
+6. Start the backend:
+
+```bash
+node server.js
+```
+
 ## Future Plans
 
 - Interactive Route Map
@@ -117,8 +150,8 @@ http://localhost:5000
 - Nearby Places
 - Saved Routes
 - Live Transport Tracking
-- User Login
-- MongoDB Database
+- User Authentication
+- Admin Panel
 
 ## Developer
 
