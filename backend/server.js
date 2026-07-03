@@ -1,132 +1,129 @@
 require("dotenv").config();
 
-const mongoose = require("mongoose");
-
 const express = require("express");
+const mongoose = require("mongoose");
 const cors = require("cors");
-const fs = require("fs");
+
+const Route = require("./models/Route");
 
 const app = express();
+
+app.use(cors());
+app.use(express.json());
 
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => {
     console.log("MongoDB Connected");
   })
-  
   .catch((err) => {
-  console.error("MongoDB Error:");
-  console.error(err.message);
-  console.error(err);
-});
-app.use(cors());
-app.use(express.json());
+    console.error("MongoDB Error:");
+    console.error(err.message);
+  });
 
-const DATA_FILE = "./data/routes.json";
+/* GET ALL ROUTES */
 
-function getRoutes() {
-  return JSON.parse(fs.readFileSync(DATA_FILE));
-}
-
-function saveRoutes(data) {
-  fs.writeFileSync(
-    DATA_FILE,
-    JSON.stringify(data, null, 2)
-  );
-}
-
-/* GET ALL */
-
-app.get("/routes", (req, res) => {
-  res.json(getRoutes());
-});
-
-/* GET ONE */
-
-app.get("/routes/:id", (req, res) => {
-  const routes = getRoutes();
-
-  const route = routes.find(
-    r => r.id == req.params.id
-  );
-
-  if (!route) {
-    return res
-      .status(404)
-      .json({ message: "Route not found" });
+app.get("/routes", async (req, res) => {
+  try {
+    const routes = await Route.find();
+    res.json(routes);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
   }
+});
 
-  res.json(route);
+/* GET SINGLE ROUTE */
+
+app.get("/routes/:id", async (req, res) => {
+  try {
+    const route = await Route.findById(req.params.id);
+
+    if (!route) {
+      return res
+        .status(404)
+        .json({ message: "Route not found" });
+    }
+
+    res.json(route);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 /* SEARCH */
 
-app.get("/search", (req, res) => {
-  const routes = getRoutes();
+app.get("/search", async (req, res) => {
+  try {
+    const keyword = req.query.from || "";
 
-  const keyword =
-    req.query.from?.toLowerCase() || "";
+    const routes = await Route.find({
+      from: {
+        $regex: keyword,
+        $options: "i",
+      },
+    });
 
-  const result = routes.filter(r =>
-    r.from.toLowerCase().includes(keyword)
-  );
-
-  res.json(result);
+    res.json(routes);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
-/* POST */
+/* CREATE */
 
-app.post("/routes", (req, res) => {
-  const routes = getRoutes();
-
-  const newRoute = {
-    id: Date.now(),
-    ...req.body
-  };
-
-  routes.push(newRoute);
-
-  saveRoutes(routes);
-
-  res.status(201).json(newRoute);
+app.post("/routes", async (req, res) => {
+  try {
+    const newRoute = await Route.create(req.body);
+    res.status(201).json(newRoute);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
-/* PUT */
+/* UPDATE */
 
-app.put("/routes/:id", (req, res) => {
-  let routes = getRoutes();
+app.put("/routes/:id", async (req, res) => {
+  try {
+    const updatedRoute = await Route.findByIdAndUpdate(
+      req.params.id,
+      req.body,
+      { new: true }
+    );
 
-  routes = routes.map(route =>
-    route.id == req.params.id
-      ? { ...route, ...req.body }
-      : route
-  );
+    if (!updatedRoute) {
+      return res
+        .status(404)
+        .json({ message: "Route not found" });
+    }
 
-  saveRoutes(routes);
-
-  res.json({
-    message: "Updated successfully"
-  });
+    res.json(updatedRoute);
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 /* DELETE */
 
-app.delete("/routes/:id", (req, res) => {
-  let routes = getRoutes();
+app.delete("/routes/:id", async (req, res) => {
+  try {
+    const deletedRoute = await Route.findByIdAndDelete(
+      req.params.id
+    );
 
-  routes = routes.filter(
-    route => route.id != req.params.id
-  );
+    if (!deletedRoute) {
+      return res
+        .status(404)
+        .json({ message: "Route not found" });
+    }
 
-  saveRoutes(routes);
-
-  res.json({
-    message: "Deleted successfully"
-  });
+    res.json({
+      message: "Route deleted successfully",
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
 });
 
 app.listen(5000, () => {
-  console.log(
-    "Backend running on http://localhost:5000"
-  );
+  console.log("Backend running on http://localhost:5000");
 });
