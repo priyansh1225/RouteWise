@@ -515,3 +515,69 @@ body {
 .light-theme li {
   color: #1a1a1a;
 }
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.stats-card {
+  background: #0f2740;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #1e3a5f;
+  text-align: center;
+}
+
+.stats-card h2 {
+  font-size: 2.5rem;
+  color: #2196f3;
+  margin-bottom: 10px;
+}
+
+.stats-card p {
+  font-size: 1.1rem;
+}
+
+.route-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.route-buttons button {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #2196f3;
+  color: white;
+  transition: 0.3s;
+}
+
+.route-buttons button:hover {
+  transform: translateY(-2px);
+}
+
+.light-theme .stats-card {
+  background: white;
+  border: 1px solid #dcdcdc;
+}
+
+.light-theme .stats-card h2,
+.light-theme .stats-card p {
+  color: #1a1a1a;
+}
+
+@media (max-width: 768px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .route-buttons {
+    flex-direction: column;
+  }
+}
