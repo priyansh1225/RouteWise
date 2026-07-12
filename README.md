@@ -1,158 +1,303 @@
 # RouteWise
 
-RouteWise is a web application made using React, Vite, and Express.js. It helps users search public transport routes and view transport-related updates. This project is being developed as part of my internship.
+RouteWise is a full-stack web application built using React, Vite, Express.js, and MongoDB Atlas. It helps commuters search public transport routes, manage transport information, and securely access protected features using JWT Authentication and Google OAuth.
 
-## Features
+This project was developed as part of my Full Stack Development Internship.
 
+---
+
+# Features
+
+- User Registration
+- User Login
+- Google OAuth Login
+- JWT Authentication
+- Protected Routes
+- User Profile API
+- Route Dashboard
 - Route Search
-- Dashboard
-- About Page
-- Login Page UI
+- CRUD Operations
 - Community Updates
 - Responsive Design
-- Dark and Light Mode
-- Backend API using Express.js
-- CRUD APIs
-- Search API
+- Dark & Light Theme
+- MongoDB Atlas Database
+- Input Validation
+- Password Hashing using bcrypt
+- Rate Limiting
+- REST APIs
 
-## Technologies Used
+---
 
-### Frontend
+# Technologies Used
+
+## Frontend
+
 - React
 - Vite
 - React Router DOM
+- Axios
 - JavaScript
 - CSS
 
-### Backend
+## Backend
+
 - Node.js
 - Express.js
+- MongoDB
+- Mongoose
+- JWT (jsonwebtoken)
+- Passport.js
+- Google OAuth 2.0
+- bcryptjs
+- express-validator
+- express-rate-limit
 - CORS
+- dotenv
 
-### Tools
+## Tools
+
+- MongoDB Atlas
 - Postman
 - GitHub
+- VS Code
 
-## How to Run the Project
+---
 
-### Clone the repository
+# Project Structure
+
+```
+RouteWise
+│
+├── frontend
+│   ├── src
+│   ├── components
+│   ├── pages
+│   ├── services
+│   └── assets
+│
+├── backend
+│   ├── config
+│   ├── middleware
+│   ├── models
+│   ├── routes
+│   ├── .env
+│   └── server.js
+│
+└── README.md
+```
+
+---
+
+# How to Run the Project
+
+## 1. Clone Repository
 
 ```bash
 git clone https://github.com/priyansh1225/RouteWise.git
 ```
 
-Go into the project folder.
-
 ```bash
 cd RouteWise
 ```
 
-## Run Frontend
+---
 
-Go to the frontend folder.
+# Frontend Setup
+
+Go to frontend folder
 
 ```bash
 cd frontend
 ```
 
-Install dependencies.
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the frontend.
+Run frontend
 
 ```bash
 npm run dev
 ```
 
-Frontend runs on:
+Frontend runs on
 
 ```
 http://localhost:5173
 ```
 
-## Run Backend
+---
 
-Open another terminal.
+# Backend Setup
 
-Go to the backend folder.
+Open another terminal
 
 ```bash
 cd backend
 ```
 
-Install dependencies.
+Install dependencies
 
 ```bash
 npm install
 ```
 
-Start the server.
+Create a `.env` file
+
+```env
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
+
+GOOGLE_CLIENT_ID=your_google_client_id
+
+GOOGLE_CLIENT_SECRET=your_google_client_secret
+```
+
+Start backend
 
 ```bash
 node server.js
 ```
 
-Backend runs on:
+Backend runs on
 
 ```
 http://localhost:5000
 ```
 
-## API Endpoints
+---
 
-- GET /routes
-- GET /routes/:id
-- GET /search?from=Location
-- POST /routes
-- PUT /routes/:id
-- DELETE /routes/:id
+# Authentication
 
-## Database
+The project includes:
 
-This project uses MongoDB Atlas as the database.
+- User Registration
+- User Login
+- JWT Token Authentication
+- Protected Profile API
+- Protected Dashboard
+- Google OAuth Login
+- Password Hashing
+- Input Validation
+- Rate Limiting
 
-A Route collection is used to store route information.
+---
 
-Each route contains:
+# API Endpoints
 
-- from
-- to
-- fare
-- vehicle
-- createdAt
-- updatedAt
+## Authentication
 
-## Database Setup
-
-1. Create a MongoDB Atlas cluster.
-2. Create a database user.
-3. Add your IP address in Network Access.
-4. Create a `.env` file in the backend folder.
-5. Add the MongoDB connection string:
-
-```env
-MONGO_URI=your_mongodb_connection_string
+```
+POST /api/auth/register
 ```
 
-6. Start the backend:
-
-```bash
-node server.js
+```
+POST /api/auth/login
 ```
 
-## Future Plans
+```
+GET /api/profile
+```
 
-- Interactive Route Map
-- AI Travel Assistant
-- Nearby Places
-- Saved Routes
-- Live Transport Tracking
-- User Authentication
-- Admin Panel
+```
+GET /auth/google
+```
 
-## Developer
+```
+GET /auth/google/callback
+```
 
-Priyansh Bhatt
+---
+
+## Routes
+
+```
+GET /routes
+```
+
+```
+GET /routes/:id
+```
+
+```
+GET /search?from=location
+```
+
+```
+POST /routes
+```
+
+```
+PUT /routes/:id
+```
+
+```
+DELETE /routes/:id
+```
+
+---
+
+# Database
+
+MongoDB Atlas is used as the cloud database.
+
+Collections:
+
+- users
+- routes
+
+User Collection stores:
+
+- Name
+- Email
+- Password (Encrypted)
+- Provider (Local / Google)
+- Google ID
+- Created At
+- Updated At
+
+Route Collection stores:
+
+- From
+- To
+- Vehicle
+- Fare
+- Created At
+- Updated At
+
+---
+
+# Security Features
+
+- JWT Authentication
+- Protected Routes
+- Password Hashing (bcrypt)
+- Google OAuth 2.0
+- Input Validation
+- Rate Limiting
+- Environment Variables
+
+---
+
+# Future Enhancements
+
+- AI Route Recommendation
+- Interactive Maps
+- Saved Favourite Routes
+- Transport Notifications
+- Admin Dashboard
+- User Profile Management
+
+---
+
+# Developer
+
+**Priyansh Bhatt**
+
+Full Stack Development Intern
+
+GitHub:
+https://github.com/priyansh1225

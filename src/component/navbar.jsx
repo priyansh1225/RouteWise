@@ -1,7 +1,22 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/routewise-logo.png";
 
 function Navbar({ toggleTheme }) {
+  const navigate = useNavigate();
+
+  const token = localStorage.getItem("token");
+
+  const handleLogout = () => {
+  const confirmLogout = window.confirm(
+    "Are you sure you want to logout?"
+  );
+
+  if (!confirmLogout) return;
+
+  localStorage.removeItem("token");
+  alert("Logged out successfully!");
+  navigate("/login");
+};
   return (
     <nav className="navbar">
       <div className="logo-container">
@@ -26,9 +41,32 @@ function Navbar({ toggleTheme }) {
           <Link to="/dashboard">Dashboard</Link>
         </li>
 
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+        {!token ? (
+          <>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+
+            <li>
+              <Link to="/register">Register</Link>
+            </li>
+          </>
+        ) : (
+          <li>
+            <button
+              onClick={handleLogout}
+              style={{
+                background: "none",
+                border: "none",
+                color: "white",
+                cursor: "pointer",
+                fontSize: "16px",
+              }}
+            >
+              Logout
+            </button>
+          </li>
+        )}
       </ul>
 
       <button

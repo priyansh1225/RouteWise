@@ -1,4 +1,5 @@
 import "./App.css";
+import ProtectedRoute from "./component/ProtectedRoute";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -7,6 +8,7 @@ import About from "./pages/about";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import ComponentDemo from "./pages/componentdemo";
+import Register from "./pages/Register";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -29,14 +31,22 @@ function App() {
             element={<About toggleTheme={toggleTheme} />}
           />
 
-          <Route
-            path="/dashboard"
-            element={<Dashboard toggleTheme={toggleTheme} />}
-          />
+         <Route
+  path="/dashboard"
+  element={
+    <ProtectedRoute>
+      <Dashboard toggleTheme={toggleTheme} />
+    </ProtectedRoute>
+  }
+/>
 
           <Route
             path="/login"
             element={<Login toggleTheme={toggleTheme} />}
+          />
+          <Route
+             path="/register"
+             element={<Register toggleTheme={toggleTheme} />}
           />
 
           <Route
