@@ -9,6 +9,7 @@ import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import ComponentDemo from "./pages/componentdemo";
 import Register from "./pages/Register";
+import AIChat from "./pages/AIChat";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -53,6 +54,12 @@ function App() {
             path="/demo"
             element={<ComponentDemo toggleTheme={toggleTheme} />}
           />
+
+          <Route
+             path="/ai"
+             element={<AIChat toggleTheme={toggleTheme} />}
+          />
+
         </Routes>
       </BrowserRouter>
     </div>

@@ -18,6 +18,7 @@ const { body, validationResult } = require("express-validator");
 const User = require("./models/User");
 const Route = require("./models/Route");
 const auth = require("./middleware/auth");
+const aiRoutes = require("./routes/ai");
 
 const app = express();
 const limiter = rateLimit({
@@ -29,6 +30,7 @@ const limiter = rateLimit({
 app.use(cors());
 app.use(express.json());
 app.use(limiter);
+app.use("/api", aiRoutes);
 app.use(
   session({
     secret: process.env.JWT_SECRET || "mysecretkey",
