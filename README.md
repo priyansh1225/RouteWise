@@ -1,125 +1,181 @@
-# RouteWise
+# 🚍 RouteWise
 
-RouteWise is a full-stack web application built using React, Vite, Express.js, and MongoDB Atlas. It helps commuters search public transport routes, manage transport information, and securely access protected features using JWT Authentication and Google OAuth.
+A modern full-stack smart transportation platform built using the MERN Stack.
 
-This project was developed as part of my Full Stack Development Internship.
+RouteWise helps users find routes, view community transport updates, estimate fares, and interact with an AI-powered travel assistant.
 
 ---
 
-# Features
+# 📌 Project Overview
+
+RouteWise is designed to simplify public transportation by providing route guidance, transport updates, fare information, and AI assistance through a clean and responsive web interface.
+
+The project follows a modern full-stack architecture with:
+
+- React.js Frontend
+- Node.js + Express Backend
+- MongoDB Database
+- JWT Authentication
+- REST APIs
+- AI Assistant Integration
+
+---
+
+# ✨ Features
+
+## 🏠 Home
+
+- Beautiful landing page
+- Hero section
+- Route search
+- Community updates
+- Smart transport cards
+
+---
+
+## 👤 Authentication
 
 - User Registration
 - User Login
-- Google OAuth Login
 - JWT Authentication
-- Protected Routes
-- User Profile API
-- Route Dashboard
-- Route Search
-- CRUD Operations
-- Community Updates
-- Responsive Design
-- Dark & Light Theme
-- MongoDB Atlas Database
-- Input Validation
-- Password Hashing using bcrypt
-- Rate Limiting
-- REST APIs
+- Protected Dashboard
+- Logout
 
 ---
 
-# Technologies Used
+## 📊 Dashboard
+
+- Welcome dashboard
+- User session management
+- Protected routes
+- Authentication check
+
+---
+
+## 🤖 AI Assistant (Week 7)
+
+Integrated AI Assistant page with:
+
+- AI Prompt Input
+- Loading State
+- Error Handling
+- Backend API Integration
+- Response Display
+- RouteWise themed UI
+
+Current backend returns demo responses and is ready for future OpenAI integration.
+
+---
+
+## 🌙 Theme Support
+
+- Dark Theme
+- Light Theme
+- Animated Theme Toggle
+
+---
+
+## 📱 Responsive Design
+
+- Mobile Friendly
+- Tablet Friendly
+- Desktop Friendly
+
+---
+
+# 🛠 Tech Stack
 
 ## Frontend
 
-- React
-- Vite
+- React.js
 - React Router DOM
 - Axios
-- JavaScript
-- CSS
+- CSS3
 
 ## Backend
 
 - Node.js
 - Express.js
+
+## Database
+
 - MongoDB
-- Mongoose
-- JWT (jsonwebtoken)
-- Passport.js
-- Google OAuth 2.0
-- bcryptjs
-- express-validator
-- express-rate-limit
-- CORS
-- dotenv
 
-## Tools
+## Authentication
 
-- MongoDB Atlas
-- Postman
-- GitHub
-- VS Code
+- JWT
+- bcrypt
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
 ```
 RouteWise
-│
-├── frontend
-│   ├── src
-│   ├── components
-│   ├── pages
-│   ├── services
-│   └── assets
 │
 ├── backend
 │   ├── config
 │   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── .env
-│   └── server.js
+│   ├── data
+│   ├── server.js
+│   └── package.json
 │
-└── README.md
+├── public
+│
+├── src
+│   ├── assets
+│   ├── component
+│   ├── pages
+│   ├── services
+│   ├── App.jsx
+│   ├── App.css
+│   ├── main.jsx
+│   └── index.css
+│
+├── README.md
+└── PROMPTS.md
 ```
 
 ---
 
-# How to Run the Project
+# 🚀 Installation
 
-## 1. Clone Repository
+## Clone Repository
 
 ```bash
-git clone https://github.com/priyansh1225/RouteWise.git
+git clone <repository-link>
 ```
+
+---
+
+## Frontend
 
 ```bash
 cd RouteWise
+
+npm install
+
+npm run dev
 ```
 
 ---
 
-# Frontend Setup
-
-Go to frontend folder
+## Backend
 
 ```bash
-cd frontend
-```
+cd backend
 
-Install dependencies
-
-```bash
 npm install
+
+npm start
 ```
 
-Run frontend
+Server runs on
 
-```bash
-npm run dev
+```
+http://localhost:5000
 ```
 
 Frontend runs on
@@ -130,174 +186,95 @@ http://localhost:5173
 
 ---
 
-# Backend Setup
+# 🔑 Environment Variables
 
-Open another terminal
+Create a `.env` file inside the backend folder.
 
-```bash
-cd backend
+Example:
+
 ```
+PORT=5000
 
-Install dependencies
-
-```bash
-npm install
-```
-
-Create a `.env` file
-
-```env
-MONGO_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_connection
 
 JWT_SECRET=your_secret_key
 
-GOOGLE_CLIENT_ID=your_google_client_id
-
-GOOGLE_CLIENT_SECRET=your_google_client_secret
+OPENAI_API_KEY=your_openai_key
 ```
 
-Start backend
+> API keys should never be committed to GitHub.
 
-```bash
-node server.js
+---
+
+# 🤖 AI API
+
+Endpoint
+
+```
+POST /api/ask-ai
 ```
 
-Backend runs on
+Example Request
 
+```json
+{
+  "prompt": "Hi"
+}
 ```
-http://localhost:5000
+
+Example Response
+
+```json
+{
+  "answer": "Hello! 👋 I am RouteWise AI. I can help you with routes, buses, fares and travel guidance in Dehradun."
+}
 ```
 
 ---
 
-# Authentication
+# 📸 Week 7 Deliverables
 
-The project includes:
+✔ AI Assistant Page
 
-- User Registration
-- User Login
-- JWT Token Authentication
-- Protected Profile API
-- Protected Dashboard
-- Google OAuth Login
-- Password Hashing
-- Input Validation
-- Rate Limiting
+✔ Backend API
 
----
+✔ Loading State
 
-# API Endpoints
+✔ Error Handling
 
-## Authentication
+✔ Prompt Testing
 
-```
-POST /api/auth/register
-```
+✔ PROMPTS.md Documentation
 
-```
-POST /api/auth/login
-```
-
-```
-GET /api/profile
-```
-
-```
-GET /auth/google
-```
-
-```
-GET /auth/google/callback
-```
+✔ GitHub Commit
 
 ---
 
-## Routes
+# 🔮 Future Improvements
 
-```
-GET /routes
-```
-
-```
-GET /routes/:id
-```
-
-```
-GET /search?from=location
-```
-
-```
-POST /routes
-```
-
-```
-PUT /routes/:id
-```
-
-```
-DELETE /routes/:id
-```
+- Real OpenAI Integration
+- Live Bus Tracking
+- Google Maps Integration
+- Fare Prediction
+- Route Optimization
+- Voice Assistant
+- Nearby Stops
+- AI Chat History
+- User Saved Routes
+- Notifications
 
 ---
 
-# Database
-
-MongoDB Atlas is used as the cloud database.
-
-Collections:
-
-- users
-- routes
-
-User Collection stores:
-
-- Name
-- Email
-- Password (Encrypted)
-- Provider (Local / Google)
-- Google ID
-- Created At
-- Updated At
-
-Route Collection stores:
-
-- From
-- To
-- Vehicle
-- Fare
-- Created At
-- Updated At
-
----
-
-# Security Features
-
-- JWT Authentication
-- Protected Routes
-- Password Hashing (bcrypt)
-- Google OAuth 2.0
-- Input Validation
-- Rate Limiting
-- Environment Variables
-
----
-
-# Future Enhancements
-
-- AI Route Recommendation
-- Interactive Maps
-- Saved Favourite Routes
-- Transport Notifications
-- Admin Dashboard
-- User Profile Management
-
----
-
-# Developer
+# 👨‍💻 Developer
 
 **Priyansh Bhatt**
 
-Full Stack Development Intern
+B.Tech Computer Science Engineering
 
-GitHub:
-https://github.com/priyansh1225
+Graphic Era Deemed University
+
+---
+
+# 📄 License
+
+This project is developed for educational purposes as part of the Full Stack Development Internship Program.
