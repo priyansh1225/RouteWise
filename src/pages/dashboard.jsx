@@ -1,89 +1,108 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 import Navbar from "../component/navbar";
 import Footer from "../component/footer";
+import api from "../services/api";
 
 function Dashboard({ toggleTheme }) {
-  const [routes, setRoutes] = useState([]);
+  const [updates, setUpdates] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://localhost:5000/routes")
-      .then((res) => res.json())
-      .then((data) => {
-        setRoutes(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        console.log(err);
-        setLoading(false);
-      });
+    loadUpdates();
   }, []);
 
-  const busRoutes = routes.filter(
-    (route) => route.vehicle === "Bus"
-  ).length;
+  const loadUpdates = async () => {
+    try {
+      const res = await api.get("/api/updates");
+      setUpdates(res.data);
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setLoading(false);
+    }
+  };
 
-  const vikramRoutes = routes.filter(
-    (route) => route.vehicle === "Vikram"
-  ).length;
+  const loggedIn = !!localStorage.getItem("token");
 
   return (
     <>
       <Navbar toggleTheme={toggleTheme} />
 
       <div className="page">
-        <h1>Route Management Dashboard</h1>
+
+       <h1 className="page-title">
+  RouteWise Dashboard
+</h1>
+        <p className="page-subtitle">
+          Welcome to your RouteWise dashboard.
+        </p>
 
         <div className="stats-grid">
+
           <div className="stats-card">
-            <h2>{routes.length}</h2>
-            <p>Total Routes</p>
+            <h2>{updates.length}</h2>
+            <p>Total Community Updates</p>
           </div>
 
           <div className="stats-card">
-            <h2>{busRoutes}</h2>
-            <p>Bus Routes</p>
+            <h2>{loggedIn ? "Yes" : "No"}</h2>
+            <p>Authenticated User</p>
           </div>
 
           <div className="stats-card">
-            <h2>{vikramRoutes}</h2>
-            <p>Vikram Routes</p>
+            <h2>Online</h2>
+            <p>Backend Status</p>
           </div>
+
+          <div className="stats-card">
+            <h2>Ready</h2>
+            <p>AI Assistant</p>
+          </div>
+
         </div>
 
-        <h2 style={{ marginTop: "40px" }}>
-          Available Routes
-        </h2>
+        <div className="about-card">
 
-        {loading ? (
-          <p>Loading routes...</p>
-        ) : (
-          <div className="card-section">
-            {routes.map((route) => (
-              <div className="card" key={route.id}>
-                <h3>
-                  {route.from} → {route.to}
-                </h3>
+          <h2>Latest Community Updates</h2>
 
-                <p>
-                  <strong>Vehicle:</strong>{" "}
-                  {route.vehicle}
-                </p>
-
-                <p>
-                  <strong>Fare:</strong> ₹
-                  {route.fare}
-                </p>
-
-                <div className="route-buttons">
-                  <button>Edit</button>
-                  <button>Delete</button>
-                </div>
+          {loading ? (
+            <p>Loading updates...</p>
+          ) : updates.length === 0 ? (
+            <p>No updates available.</p>
+          ) : (
+            updates.slice(0, 5).map((update) => (
+              <div
+                key={update._id}
+                className="update-card"
+              >
+                {update.message}
               </div>
-            ))}
-          </div>
-        )}
+            ))
+          )}
+
+        </div>
+
+        <div
+          style={{
+            display: "flex",
+            gap: "20px",
+            marginTop: "30px",
+            flexWrap: "wrap",
+          }}
+        >
+
+          <Link to="/" className="custom-btn">
+            🏠 Home
+          </Link>
+
+          <Link to="/ai" className="custom-btn">
+            🤖 AI Assistant
+          </Link>
+
+        </div>
+
       </div>
 
       <Footer />

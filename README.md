@@ -1,114 +1,91 @@
-# 🚍 RouteWise
+# 🚌 RouteWise
 
-A modern full-stack smart transportation platform built using the MERN Stack.
+RouteWise is a Full Stack Smart Public Transport Management System developed using the MERN Stack. It helps users search transport routes, receive community travel updates, and interact with an AI-powered travel assistant for guidance.
 
-RouteWise helps users find routes, view community transport updates, estimate fares, and interact with an AI-powered travel assistant.
-
----
-
-# 📌 Project Overview
-
-RouteWise is designed to simplify public transportation by providing route guidance, transport updates, fare information, and AI assistance through a clean and responsive web interface.
-
-The project follows a modern full-stack architecture with:
-
-- React.js Frontend
-- Node.js + Express Backend
-- MongoDB Database
-- JWT Authentication
-- REST APIs
-- AI Assistant Integration
+The project focuses on improving the public transportation experience through route management, community collaboration, authentication, and AI-assisted support.
 
 ---
 
-# ✨ Features
+# Features
 
-## 🏠 Home
-
-- Beautiful landing page
-- Hero section
-- Route search
-- Community updates
-- Smart transport cards
-
----
-
-## 👤 Authentication
-
+## User Authentication
 - User Registration
 - User Login
 - JWT Authentication
 - Protected Dashboard
-- Logout
+- Google OAuth Login
 
 ---
 
-## 📊 Dashboard
-
-- Welcome dashboard
-- User session management
-- Protected routes
-- Authentication check
-
----
-
-## 🤖 AI Assistant (Week 7)
-
-Integrated AI Assistant page with:
-
-- AI Prompt Input
-- Loading State
-- Error Handling
-- Backend API Integration
-- Response Display
-- RouteWise themed UI
-
-Current backend returns demo responses and is ready for future OpenAI integration.
+## Dashboard
+- Protected Dashboard
+- Authentication Status
+- Backend Status
+- AI Assistant Status
+- Community Updates Overview
 
 ---
 
-## 🌙 Theme Support
+## Community Updates
+- Add New Update
+- View All Updates
+- Edit Existing Update
+- Delete Updates
+- Real-time MongoDB Integration
 
+---
+
+## AI Assistant
+- Route Guidance
+- Fare Information
+- Bus Information
+- Vikram Information
+- Travel Tips
+- Traffic Suggestions
+- Smart Predefined AI Responses
+
+---
+
+## Search
+- Search Routes
+- Easy Route Lookup
+
+---
+
+## UI Features
+- Responsive Design
 - Dark Theme
 - Light Theme
-- Animated Theme Toggle
-
----
-
-## 📱 Responsive Design
-
+- Modern Glassmorphism UI
+- Animated Buttons
+- Interactive Cards
 - Mobile Friendly
-- Tablet Friendly
-- Desktop Friendly
 
 ---
 
-# 🛠 Tech Stack
+# Tech Stack
 
 ## Frontend
-
 - React.js
 - React Router DOM
 - Axios
 - CSS3
 
 ## Backend
-
 - Node.js
 - Express.js
 
 ## Database
-
-- MongoDB
+- MongoDB Atlas
+- Mongoose
 
 ## Authentication
-
 - JWT
-- bcrypt
+- Google OAuth (Passport.js)
 
 ---
 
-# 📂 Project Structure
+# Project Structure
 
 ```
 RouteWise
@@ -118,46 +95,93 @@ RouteWise
 │   ├── middleware
 │   ├── models
 │   ├── routes
-│   ├── data
 │   ├── server.js
+│   └── .env
+│
+├── frontend
+│   ├── src
+│   │   ├── assets
+│   │   ├── component
+│   │   ├── pages
+│   │   ├── services
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
 │   └── package.json
 │
-├── public
-│
-├── src
-│   ├── assets
-│   ├── component
-│   ├── pages
-│   ├── services
-│   ├── App.jsx
-│   ├── App.css
-│   ├── main.jsx
-│   └── index.css
-│
-├── README.md
-└── PROMPTS.md
+└── README.md
 ```
 
 ---
 
-# 🚀 Installation
+# API Endpoints
+
+## Authentication
+
+### Register
+
+```
+POST /api/auth/register
+```
+
+### Login
+
+```
+POST /api/auth/login
+```
+
+### User Profile
+
+```
+GET /api/profile
+```
+
+---
+
+## Community Updates
+
+### Get All Updates
+
+```
+GET /api/updates
+```
+
+### Create Update
+
+```
+POST /api/updates
+```
+
+### Update Existing Update
+
+```
+PUT /api/updates/:id
+```
+
+### Delete Update
+
+```
+DELETE /api/updates/:id
+```
+
+---
+
+## AI Assistant
+
+### Ask AI
+
+```
+POST /api/ask-ai
+```
+
+---
+
+# Installation
 
 ## Clone Repository
 
 ```bash
-git clone <repository-link>
-```
-
----
-
-## Frontend
-
-```bash
-cd RouteWise
-
-npm install
-
-npm run dev
+git clone https://github.com/yourusername/routewise.git
 ```
 
 ---
@@ -166,115 +190,180 @@ npm run dev
 
 ```bash
 cd backend
-
 npm install
-
 npm start
 ```
 
-Server runs on
+---
 
-```
-http://localhost:5000
-```
+## Frontend
 
-Frontend runs on
-
-```
-http://localhost:5173
+```bash
+cd frontend
+npm install
+npm run dev
 ```
 
 ---
 
-# 🔑 Environment Variables
+# Environment Variables
 
 Create a `.env` file inside the backend folder.
 
-Example:
-
 ```
-PORT=5000
+MONGO_URI=Your MongoDB Connection String
 
-MONGO_URI=your_mongodb_connection
+JWT_SECRET=Your JWT Secret
 
-JWT_SECRET=your_secret_key
+GOOGLE_CLIENT_ID=Your Client ID
 
-OPENAI_API_KEY=your_openai_key
-```
-
-> API keys should never be committed to GitHub.
-
----
-
-# 🤖 AI API
-
-Endpoint
-
-```
-POST /api/ask-ai
-```
-
-Example Request
-
-```json
-{
-  "prompt": "Hi"
-}
-```
-
-Example Response
-
-```json
-{
-  "answer": "Hello! 👋 I am RouteWise AI. I can help you with routes, buses, fares and travel guidance in Dehradun."
-}
+GOOGLE_CLIENT_SECRET=Your Client Secret
 ```
 
 ---
 
-# 📸 Week 7 Deliverables
+# Screenshots
 
-✔ AI Assistant Page
+## Home Page
 
-✔ Backend API
-
-✔ Loading State
-
-✔ Error Handling
-
-✔ Prompt Testing
-
-✔ PROMPTS.md Documentation
-
-✔ GitHub Commit
+(Add Screenshot)
 
 ---
 
-# 🔮 Future Improvements
+## Login
 
-- Real OpenAI Integration
+(Add Screenshot)
+
+---
+
+## Register
+
+(Add Screenshot)
+
+---
+
+## Dashboard
+
+(Add Screenshot)
+
+---
+
+## Community Updates CRUD
+
+(Add Screenshot)
+
+---
+
+## AI Assistant
+
+(Add Screenshot)
+
+---
+
+## Responsive Design
+
+(Add Desktop Screenshot)
+
+(Add Mobile Screenshot)
+
+---
+
+## Network Requests
+
+(Add Browser Network Screenshot)
+
+---
+
+# CRUD Operations
+
+Community Updates module supports full CRUD functionality.
+
+- Create Update
+- Read Updates
+- Update Existing Update
+- Delete Update
+
+All operations are connected to MongoDB Atlas using Express APIs.
+
+---
+
+# Authentication Flow
+
+- User Registration
+- User Login
+- JWT Token Generation
+- Protected Routes
+- Google OAuth Login
+
+---
+
+# AI Assistant
+
+The RouteWise AI Assistant provides predefined intelligent responses for:
+
+- Route Guidance
+- Bus Information
+- Fare Information
+- Vikram Services
+- Traffic Information
+- Travel Tips
+
+---
+
+# Future Enhancements
+
 - Live Bus Tracking
 - Google Maps Integration
-- Fare Prediction
 - Route Optimization
-- Voice Assistant
-- Nearby Stops
-- AI Chat History
-- User Saved Routes
-- Notifications
+- AI Route Prediction
+- Admin Dashboard
+- User Feedback System
+- Push Notifications
+- Real-Time Bus Locations
+- Driver Portal
+- Passenger Ratings
 
 ---
 
-# 👨‍💻 Developer
+# Challenges Faced
+
+- MongoDB Atlas Connection Issues
+- JWT Authentication Integration
+- Protected Route Management
+- CRUD API Integration
+- Responsive UI Design
+- AI Assistant Integration
+- Theme Switching
+- Backend API Testing
+
+---
+
+# Learning Outcomes
+
+During the development of RouteWise, the following concepts were implemented and practiced:
+
+- MERN Stack Development
+- REST API Development
+- MongoDB CRUD Operations
+- JWT Authentication
+- Google OAuth
+- React State Management
+- Axios API Integration
+- Responsive UI Design
+- Git & GitHub Workflow
+
+---
+
+# Author
 
 **Priyansh Bhatt**
 
-B.Tech Computer Science Engineering
+B.Tech CSE (Cyber Security)
 
 Graphic Era Deemed University
 
 ---
 
-# 📄 License
+# License
 
-This project is developed for educational purposes as part of the Full Stack Development Internship Program.
+This project is developed for educational and internship purposes.

@@ -19,7 +19,7 @@ const User = require("./models/User");
 const Route = require("./models/Route");
 const auth = require("./middleware/auth");
 const aiRoutes = require("./routes/ai");
-
+const updateroutes = require("./routes/updateroutes");
 const app = express();
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
@@ -31,6 +31,7 @@ app.use(cors());
 app.use(express.json());
 app.use(limiter);
 app.use("/api", aiRoutes);
+app.use("/api/updates", updateroutes);
 app.use(
   session({
     secret: process.env.JWT_SECRET || "mysecretkey",
