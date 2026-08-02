@@ -63,18 +63,11 @@ function Login({ toggleTheme }) {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <button type="submit">
+  Login
+</button>
 
-          <button type="submit">Login</button>
-
-          <button
-            type="button"
-            onClick={() => {
-              window.location.href =
-                "http://localhost:5000/auth/google";
-            }}
-          >
-            Sign in with Google
-          </button>
+ 
         </form>
       </div>
 
