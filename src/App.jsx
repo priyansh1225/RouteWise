@@ -8,8 +8,8 @@ import About from "./pages/about";
 import Dashboard from "./pages/dashboard";
 import Login from "./pages/login";
 import ComponentDemo from "./pages/componentdemo";
-import Register from "./pages/Register";
-import AIChat from "./pages/AIChat";
+import Register from "./pages/register";
+import AIChat from "./pages/AIchat";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
