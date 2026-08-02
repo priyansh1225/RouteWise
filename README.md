@@ -1,91 +1,76 @@
-# 🚌 RouteWise
+# 🚍 RouteWise
 
-RouteWise is a Full Stack Smart Public Transport Management System developed using the MERN Stack. It helps users search transport routes, receive community travel updates, and interact with an AI-powered travel assistant for guidance.
-
-The project focuses on improving the public transportation experience through route management, community collaboration, authentication, and AI-assisted support.
+RouteWise is a MERN Stack based public transport management web application that helps users find transport routes, manage community updates, and receive AI-powered travel guidance. The project focuses on improving the accessibility of public transportation information with a simple and user-friendly interface.
 
 ---
 
-# Features
+# 🌐 Live Demo
+
+Frontend:
+https://route-wise-sandy.vercel.app/
+
+Backend API:
+https://routewise-backend-fylq.onrender.com
+
+GitHub Repository:
+https://github.com/priyansh1225/RouteWise
+
+---
+
+# 📌 Features
 
 ## User Authentication
 - User Registration
 - User Login
 - JWT Authentication
 - Protected Dashboard
-- Google OAuth Login
+- Logout Functionality
 
----
-
-## Dashboard
-- Protected Dashboard
-- Authentication Status
-- Backend Status
-- AI Assistant Status
-- Community Updates Overview
-
----
-
-## Community Updates
-- Add New Update
-- View All Updates
-- Edit Existing Update
-- Delete Updates
-- Real-time MongoDB Integration
-
----
+## RouteWise Features
+- Route Search
+- Community Updates
+- Add Community Update
+- Edit Community Update
+- Delete Community Update
+- Responsive Navigation
+- Dark/Light Theme Toggle
 
 ## AI Assistant
-- Route Guidance
-- Fare Information
-- Bus Information
-- Vikram Information
+- AI Travel Assistant
 - Travel Tips
-- Traffic Suggestions
-- Smart Predefined AI Responses
+- Fare Information
+- Route Suggestions
+- Transport Guidance
 
 ---
 
-## Search
-- Search Routes
-- Easy Route Lookup
-
----
-
-## UI Features
-- Responsive Design
-- Dark Theme
-- Light Theme
-- Modern Glassmorphism UI
-- Animated Buttons
-- Interactive Cards
-- Mobile Friendly
-
----
-
-# Tech Stack
+# 🛠 Tech Stack
 
 ## Frontend
 - React.js
 - React Router DOM
 - Axios
-- CSS3
+- CSS
 
 ## Backend
 - Node.js
 - Express.js
+- JWT Authentication
+- Express Validator
+- bcryptjs
 
 ## Database
 - MongoDB Atlas
 - Mongoose
 
-## Authentication
-- JWT
-- Google OAuth (Passport.js)
+## Deployment
+- Frontend : Vercel
+- Backend : Render
+- Database : MongoDB Atlas
 
 ---
 
-# Project Structure
+# 📂 Project Structure
 
 ```
 RouteWise
@@ -96,92 +81,38 @@ RouteWise
 │   ├── models
 │   ├── routes
 │   ├── server.js
-│   └── .env
-│
-├── frontend
-│   ├── src
-│   │   ├── assets
-│   │   ├── component
-│   │   ├── pages
-│   │   ├── services
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   │
 │   └── package.json
 │
+├── public
+│
+├── src
+│   ├── component
+│   ├── pages
+│   ├── services
+│   ├── App.jsx
+│   └── main.jsx
+│
+├── package.json
 └── README.md
 ```
 
 ---
 
-# API Endpoints
-
-## Authentication
-
-### Register
-
-```
-POST /api/auth/register
-```
-
-### Login
-
-```
-POST /api/auth/login
-```
-
-### User Profile
-
-```
-GET /api/profile
-```
-
----
-
-## Community Updates
-
-### Get All Updates
-
-```
-GET /api/updates
-```
-
-### Create Update
-
-```
-POST /api/updates
-```
-
-### Update Existing Update
-
-```
-PUT /api/updates/:id
-```
-
-### Delete Update
-
-```
-DELETE /api/updates/:id
-```
-
----
-
-## AI Assistant
-
-### Ask AI
-
-```
-POST /api/ask-ai
-```
-
----
-
-# Installation
+# 🚀 Installation
 
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/routewise.git
+git clone https://github.com/priyansh1225/RouteWise.git
+```
+
+---
+
+## Frontend
+
+```bash
+npm install
+npm run dev
 ```
 
 ---
@@ -190,180 +121,92 @@ git clone https://github.com/yourusername/routewise.git
 
 ```bash
 cd backend
+
 npm install
+
 npm start
 ```
 
 ---
 
-## Frontend
+# 🔑 Environment Variables
 
-```bash
-cd frontend
-npm install
-npm run dev
+Create a `.env` file inside the **backend** folder.
+
+```
+PORT=5000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_secret_key
 ```
 
 ---
 
-# Environment Variables
+# 📷 Project Screenshots
 
-Create a `.env` file inside the backend folder.
-
-```
-MONGO_URI=Your MongoDB Connection String
-
-JWT_SECRET=Your JWT Secret
-
-GOOGLE_CLIENT_ID=Your Client ID
-
-GOOGLE_CLIENT_SECRET=Your Client Secret
-```
+- Home Page
+- About Page
+- Login
+- Register
+- Dashboard
+- Community Updates
+- AI Chat Assistant
+- Render Deployment
+- Vercel Deployment
 
 ---
 
-# Screenshots
+# 🔒 Authentication
 
-## Home Page
+The application uses:
 
-(Add Screenshot)
-
----
-
-## Login
-
-(Add Screenshot)
-
----
-
-## Register
-
-(Add Screenshot)
-
----
-
-## Dashboard
-
-(Add Screenshot)
-
----
-
-## Community Updates CRUD
-
-(Add Screenshot)
-
----
-
-## AI Assistant
-
-(Add Screenshot)
-
----
-
-## Responsive Design
-
-(Add Desktop Screenshot)
-
-(Add Mobile Screenshot)
-
----
-
-## Network Requests
-
-(Add Browser Network Screenshot)
-
----
-
-# CRUD Operations
-
-Community Updates module supports full CRUD functionality.
-
-- Create Update
-- Read Updates
-- Update Existing Update
-- Delete Update
-
-All operations are connected to MongoDB Atlas using Express APIs.
-
----
-
-# Authentication Flow
-
-- User Registration
-- User Login
-- JWT Token Generation
+- JWT Authentication
 - Protected Routes
-- Google OAuth Login
+- Password Hashing using bcrypt
+- MongoDB User Storage
 
 ---
 
-# AI Assistant
+# 🤖 AI Assistant
 
-The RouteWise AI Assistant provides predefined intelligent responses for:
+The built-in AI Assistant can answer questions about:
 
+- Public Transport
 - Route Guidance
-- Bus Information
 - Fare Information
+- Bus Services
 - Vikram Services
-- Traffic Information
 - Travel Tips
+- Traffic Guidance
 
 ---
 
-# Future Enhancements
+# 📈 Future Enhancements
 
+- Google OAuth Login
 - Live Bus Tracking
 - Google Maps Integration
-- Route Optimization
-- AI Route Prediction
+- Real-Time Transport Data
+- Favourite Routes
+- Route Reviews
+- Notifications
 - Admin Dashboard
-- User Feedback System
-- Push Notifications
-- Real-Time Bus Locations
-- Driver Portal
-- Passenger Ratings
+- User Profile
+- Route Analytics
 
 ---
 
-# Challenges Faced
-
-- MongoDB Atlas Connection Issues
-- JWT Authentication Integration
-- Protected Route Management
-- CRUD API Integration
-- Responsive UI Design
-- AI Assistant Integration
-- Theme Switching
-- Backend API Testing
-
----
-
-# Learning Outcomes
-
-During the development of RouteWise, the following concepts were implemented and practiced:
-
-- MERN Stack Development
-- REST API Development
-- MongoDB CRUD Operations
-- JWT Authentication
-- Google OAuth
-- React State Management
-- Axios API Integration
-- Responsive UI Design
-- Git & GitHub Workflow
-
----
-
-# Author
+# 👨‍💻 Author
 
 **Priyansh Bhatt**
 
 B.Tech CSE (Cyber Security)
 
-Graphic Era Deemed University
+Graphic Era Deemed to be University
 
 ---
 
-# License
+# 📄 License
 
 This project is developed for educational and internship purposes.
