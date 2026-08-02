@@ -15,8 +15,8 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const { body, validationResult } = require("express-validator");
 
-const User = require("./models/User");
-const Route = require("./models/Route");
+const User = require("./models/user");
+const Route = require("./models/route");
 const auth = require("./middleware/auth");
 const aiRoutes = require("./routes/ai");
 const updateroutes = require("./routes/updateroutes");
