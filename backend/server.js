@@ -217,8 +217,8 @@ app.get(
     );
 
     res.redirect(
-      `http://localhost:5173/login?token=${token}`
-    );
+  `https://route-wise-sandy.vercel.app/login?token=${token}`
+);
   }
 );
 
