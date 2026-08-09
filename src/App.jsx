@@ -34,10 +34,8 @@ function App() {
 
           <Route
             path="/dashboard"
-            element={
-              <ProtectedRoute>
-                <Dashboard toggleTheme={toggleTheme} />
-              </ProtectedRoute>
+            element={ <Dashboard toggleTheme={toggleTheme} />
+          
             }
           />
 

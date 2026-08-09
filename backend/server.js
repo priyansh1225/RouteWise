@@ -271,22 +271,39 @@ app.get("/routes/:id", async (req, res) => {
   }
 });
 
-/* SEARCH */
+/* SEARCH ROUTES */
 
 app.get("/search", async (req, res) => {
   try {
-    const keyword = req.query.from || "";
+    const { from, to } = req.query;
 
-    const routes = await Route.find({
-      from: {
-        $regex: keyword,
+    const filter = {};
+
+    // Search starting location
+    if (from && from.trim() !== "") {
+      filter.from = {
+        $regex: from.trim(),
         $options: "i",
-      },
-    });
+      };
+    }
+
+    // Search destination if provided
+    if (to && to.trim() !== "") {
+      filter.to = {
+        $regex: to.trim(),
+        $options: "i",
+      };
+    }
+
+    const routes = await Route.find(filter);
 
     res.json(routes);
   } catch (error) {
-    res.status(500).json({ message: error.message });
+    console.error("Route search error:", error);
+
+    res.status(500).json({
+      message: "Failed to search routes",
+    });
   }
 });
 
