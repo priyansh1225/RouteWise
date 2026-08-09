@@ -24,10 +24,6 @@ https://routewise-backend-fylq.onrender.com
 
 https://github.com/priyansh1225/RouteWise
 
-### Demo Video
-
-> YouTube Unlisted Demo: ADD_YOUR_UNLISTED_VIDEO_LINK_HERE
-
 ---
 
 # 📌 Problem Statement
@@ -398,7 +394,7 @@ README-assets/home.png
 After adding the screenshot to the repository, use:
 
 ```markdown
-![RouteWise Home Page](README-assets/home.png)
+![RouteWise Home Page](src/assets/home.png)
 ```
 
 ---
@@ -426,7 +422,7 @@ README-assets/route-search.png
 After adding the screenshot to the repository, use:
 
 ```markdown
-![RouteWise Route Search](README-assets/route-search.png)
+![RouteWise Route Search](src/assets/route-search.png)
 ```
 
 ---
@@ -451,7 +447,7 @@ README-assets/ai-assistant.png
 After adding the screenshot to the repository, use:
 
 ```markdown
-![RouteWise AI Assistant](README-assets/ai-assistant.png)
+![RouteWise AI Assistant](src/assets/ai.png)
 ```
 
 ---
@@ -474,7 +470,7 @@ README-assets/dashboard.png
 After adding the screenshot to the repository, use:
 
 ```markdown
-![RouteWise Dashboard](README-assets/dashboard.png)
+![RouteWise Dashboard](src/assets/dashboard.png)
 ```
 
 ---
